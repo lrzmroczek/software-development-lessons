@@ -1,11 +1,11 @@
 # Summary
 
-This repository contains my notes on the software development process and my lessons learned throughout my career.
+This repository contains my notes on the software development process and the lessons I've learned throughout the years.
 
-The starting point for this presentation is: [index](docs/index.md)
+This site is viewable [here](https://lrzmroczek.github.io/software-development-lessons/).
 
-This documentation was written in [Obsidian](https://obsidian.md/), built by [mkdocs](https://www.mkdocs.org/), and is published and hosted on [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/). The notes on this setup can be found at [GitLab Pages setup](Notes/GitLab%20Pages%20setup.md).
+For information on how to build and serve this site, see the [Wiki](https://github.com/lrzmroczek/software-development-lessons/wiki).
 
-To serve this site locally, see [[Local Testing]].
+---
 
-See [Resources](docs/Resources.md) for additional resources.
+This documentation was written in [Obsidian](https://obsidian.md/), built by [mkdocs](https://www.mkdocs.org/), and is published and hosted on [GitHub pages](https://pages.github.com/).
