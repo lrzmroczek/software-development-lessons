@@ -13,4 +13,4 @@ Software development can be complicated! Some lessons are only learned through m
 
 Check out additional [[Resources]] here.
 
-The repository containing the presentation materials can be found on [GitLab](https://github.com/lrzmroczek/software-development). Please submit any issues or pull requests there. Thanks!
+The repository containing the presentation materials can be found on [GitHub](https://github.com/lrzmroczek/software-development-lessons). Please submit any issues or pull requests there. Thanks!

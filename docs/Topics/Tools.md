@@ -64,9 +64,9 @@ Some example code blueprints from @hagenjt1:
 
 Some example tools:
 
-- Gitlab CI
+- GitLab CI
 	- There is a lot of contents and it can be daunting to learn...but is not that hard!
-	- Gitlab's documentation is pretty good: https://docs.gitlab.com/ee/ci/
+	- GitLab's documentation is pretty good: https://docs.gitlab.com/ee/ci/
 - Bamboo CI
 	- Ties to BitBucket
 

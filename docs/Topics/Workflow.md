@@ -33,7 +33,7 @@ tags:
 	- Provides a backup in case something happens to your computer and you lose your work
 - Make sure code compiles and tests pass before merging
 	- I try to avoid broken code even on my branches, but if I have to check in something that doesn't work, I mark it as "DRAFT" or "WIP" (Work in Progress)
-- Use merge rules can be set up in GitLab to protect branches from accidental merges
+- Use merge rules can be set up in GitHub/GitLab to protect branches from accidental merges
 - Design and planning makes the development easier
 
 
@@ -59,7 +59,7 @@ tags:
 	- Changes to APIs or interfaces
 
 > [!info] Example Project
-> The workflow below is set up in an [example repository](https://github.com/lrzmroczek/example-project). Feel free to follow along on GitLab, or make a copy and play with it yourself!
+> The workflow below is set up in an [example repository](https://github.com/lrzmroczek/sw-dev-lessons-example-project). Feel free to follow along on GitHub, or make a copy and play with it yourself!
 
 
 ### Example Scenario
@@ -89,10 +89,10 @@ In the example scenario below:
 	- **However, both developer's work affects each other's!**
 
 > [!example]+ Process
-> 1. [Merge `feat-stub` branch into `develop` branch](https://github.com/lrzmroczek/example-project/-/merge_requests/1)
-> 1. [Merge `develop` branch into `main` branch`](https://github.com/lrzmroczek/example-project/-/merge_requests/2)
-> 1. [Tag `main` branch as `v0.0`](https://github.com/lrzmroczek/example-project/-/tags/v0.0)
-> 1. [Merge `fix-ave` branch into `develop` branch](https://github.com/lrzmroczek/example-project/-/merge_requests/3)
+> 1. [Merge `feat-stub` branch into `develop` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/1)
+> 1. [Merge `develop` branch into `main` branch`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/2)
+> 1. [Tag `main` branch as `v0.0`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/v0.0)
+> 1. [Merge `fix-ave` branch into `develop` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/3)
 
 #### Combining Work
 
@@ -124,12 +124,12 @@ gitGraph
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
   
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
   
     %% This is the branching point between the BAD and GOOD workflows
 ```
@@ -138,7 +138,7 @@ gitGraph
 > See [[Workflow#Good Workflow]]
 
 > [!info]- Workflow branch point
-> The Bad and Good workflows deviate at [this commit](https://github.com/lrzmroczek/example-project/-/tags/workflow-branch-point)
+> The Bad and Good workflows deviate these commits in the [`develop` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-develop) and [`feat-offset` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-feat-offset).
 
 
 #### Bad Workflow
@@ -166,12 +166,12 @@ gitGraph
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
   
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
   
     %% This is the branching point between the BAD and GOOD workflows
     %% BAD workflow
@@ -184,13 +184,13 @@ gitGraph
 ```
 
 > [!info]- Branch names
-> Copies of the branches were created in the [example repo](https://github.com/lrzmroczek/example-project) to illustrate this workflow:
-> - [`develop-bad`](https://github.com/lrzmroczek/example-project/-/tree/develop-bad) is a copy of [`develop`](https://github.com/lrzmroczek/example-project/-/tree/develop)
-> - [`feat-offset-bad`](https://github.com/lrzmroczek/example-project/-/tree/feat-offset-bad) is a copy of [`feat-offset`](https://github.com/lrzmroczek/example-project/-/tree/feat-offset), starting from the [`integrate and test offset` commit](https://github.com/lrzmroczek/example-project/-/tree/feat-offset)
+> Copies of the branches were created in the [example repo](https://github.com/lrzmroczek/sw-dev-lessons-example-project) to illustrate this workflow:
+> - [`develop-bad`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-bad) is a copy of [`develop`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop)
+> - [`feat-offset-bad`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-bad) is a copy of [`feat-offset`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset), starting from the [`integrate and test offset` commit](https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-feat-offset)
 
 > [!example]+ Process
-> 1. [Merge `feat-offset` branch into `develop` branch](https://github.com/lrzmroczek/example-project/-/merge_requests/4)
-> 1. Test [`develop`](https://github.com/lrzmroczek/example-project/-/tree/develop-bad)  branch
+> 1. [Merge `feat-offset` branch into `develop` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/4)
+> 1. Test [`develop`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-bad)  branch
 >   	- **Branch is now broken (tests fail)!**
 
 > [!failure] Why this is bad
@@ -223,12 +223,12 @@ gitGraph
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
   
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
   
     %% This is the branching point between the BAD and GOOD workflows
     %% GOOD workflow
@@ -243,17 +243,17 @@ gitGraph
 ```
 
 > [!info]- Branch names
-> Copies of the branches were created in the [example repo](https://github.com/lrzmroczek/example-project) to illustrate this workflow:
-> - [`develop-good`](https://github.com/lrzmroczek/example-project/-/tree/develop-good) is a copy of [`develop`](https://github.com/lrzmroczek/example-project/-/tree/develop)
-> - [`feat-offset-good`](https://github.com/lrzmroczek/example-project/-/tree/feat-offset-good) is a copy of [`feat-offset`](https://github.com/lrzmroczek/example-project/-/tree/feat-offset), starting from the [`integrate and test offset` commit](https://github.com/lrzmroczek/example-project/-/tree/feat-offset)
+> Copies of the branches were created in the [example repo](https://github.com/lrzmroczek/sw-dev-lessons-example-project) to illustrate this workflow:
+> - [`develop-good`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-good) is a copy of [`develop`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop)
+> - [`feat-offset-good`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-good) is a copy of [`feat-offset`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset), starting from the [`integrate and test offset` commit](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset)
 
 > [!example]+ Process
-> 1. [Merge `develop` branch into `feat-offset` branch](https://github.com/lrzmroczek/example-project/-/merge_requests/5)
-> 1. Test [`feat-offset`](https://github.com/lrzmroczek/example-project/-/tree/feat-offset-good) branch
+> 1. [Merge `develop` branch into `feat-offset` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/5)
+> 1. Test [`feat-offset`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-good) branch
 >      - **Branch is now broken (tests fail)!**
-> 1. [Fix everything in the `feat-offset` branch](https://github.com/lrzmroczek/example-project/-/commit/d7febb7aacfcbc316c0799845f48f305f1402733)
-> 2. [Merge `feat-offset` branch into `develop` branch](https://github.com/lrzmroczek/example-project/-/merge_requests/6)
-> 4. Test [`develop`](https://github.com/lrzmroczek/example-project/-/tree/develop-good) branch
+> 1. [Fix everything in the `feat-offset` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/commit/2c2cdaefd9da21c527570b2b0a83440161bf8bcd)
+> 2. [Merge `feat-offset` branch into `develop` branch](https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/6)
+> 4. Test [`develop`](https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-good) branch
 >      - **Branch works (tests pass)!**
 
 > [!success] Why this is good

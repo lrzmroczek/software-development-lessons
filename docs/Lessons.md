@@ -37,7 +37,7 @@ You don't want to break everyone's code on a Friday afternoon and stay late fixi
 	- Who is working on something related?
 	- Where will my changes be seen?
 
-- Wait for the CI to finish to verify it all works ([example CI pipeline](https://github.com/lrzmroczek/software-development/-/pipelines/876846))!
+- Wait for the CI to finish to verify it all works!
 	
 ![[gitlab_ci_pipeline.png]] [^1]
 [^1]: https://gitlab.com/
@@ -79,7 +79,7 @@ Commit and push regularly (if you don't push in git, your work stays local and i
 > [!related] Relevant Topics
 > [[Tools]]
 
-- Try the tutorials on common tools (git, VSCode, Gitlab CI, debuggers) - they will give tips on features and shortcuts you may not have known about
+- Try the tutorials on common tools (git, VSCode, GitLab CI, debuggers) - they will give tips on features and shortcuts you may not have known about
 - Use the tools available, within reason
 - Don't use every tool you can find - it makes unnecessary dependencies for others
 
@@ -154,7 +154,7 @@ Many functions will set a code or indicator when something goes wrong. Make sure
 
 ## Use issue trackers to break up work and track progress
 
-Issue trackers like GitLab and Jira are useful for Project Manager, but can also be helpful in splitting up a task into managable chunks. A branch for each issue also helps keep work separated and reviewable.
+Issue trackers like GitLab and Jira are useful for Project Managers, but can also be helpful in splitting up a task into managable chunks. A branch for each issue also helps keep work separated and reviewable.
 
 - Create tickets to keep focused, track progress, add notes
 	- If there were problems you encountered and solved (or not), add info to the ticket, in case the problem is encountered later - so someone else can use what you learned

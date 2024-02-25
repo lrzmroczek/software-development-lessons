@@ -29,7 +29,7 @@
 ### Example Code
 
 > [!note]
-> The example code can be found in the [Example Project](https://github.com/lrzmroczek/example-project/-/blob/testable-code/testable_code.py) repository.
+> The example code can be found in the [Example Project](https://github.com/lrzmroczek/sw-dev-lessons-example-project/blob/testable-code/test_function_example.py) repository.
 
 Consider the following example code snippets:
 
