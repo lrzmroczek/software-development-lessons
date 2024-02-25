@@ -1022,7 +1022,7 @@
 <li>I try to avoid broken code even on my branches, but if I have to check in something that doesn't work, I mark it as "DRAFT" or "WIP" (Work in Progress)</li>
 </ul>
 </li>
-<li>Use merge rules can be set up in GitLab to protect branches from accidental merges</li>
+<li>Use merge rules can be set up in GitHub/GitLab to protect branches from accidental merges</li>
 <li>Design and planning makes the development easier</li>
 </ul>
 <p><a href="../Code%20Reviews/">Code Reviews</a></p>
@@ -1049,7 +1049,7 @@
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Example Project</p>
-<p>The workflow below is set up in an <a href="https://github.com/lrzmroczek/example-project">example repository</a>. Feel free to follow along on GitLab, or make a copy and play with it yourself!</p>
+<p>The workflow below is set up in an <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project">example repository</a>. Feel free to follow along on GitHub, or make a copy and play with it yourself!</p>
 </div>
 <h3 id="example-scenario">Example Scenario<a class="headerlink" href="#example-scenario" title="Permanent link">&para;</a></h3>
 <p>In the example scenario below:</p>
@@ -1089,10 +1089,10 @@
 <details class="example" open="open">
 <summary>Process</summary>
 <ol>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/1">Merge <code>feat-stub</code> branch into <code>develop</code> branch</a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/2">Merge <code>develop</code> branch into <code>main</code> branch`</a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/tags/v0.0">Tag <code>main</code> branch as <code>v0.0</code></a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/3">Merge <code>fix-ave</code> branch into <code>develop</code> branch</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/1">Merge <code>feat-stub</code> branch into <code>develop</code> branch</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/2">Merge <code>develop</code> branch into <code>main</code> branch`</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/v0.0">Tag <code>main</code> branch as <code>v0.0</code></a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/3">Merge <code>fix-ave</code> branch into <code>develop</code> branch</a></li>
 </ol>
 </details>
 <h4 id="combining-work">Combining Work<a class="headerlink" href="#combining-work" title="Permanent link">&para;</a></h4>
@@ -1124,12 +1124,12 @@
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
 
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
 
     %% This is the branching point between the BAD and GOOD workflows</code></pre>
 <details class="question">
@@ -1138,7 +1138,7 @@
 </details>
 <details class="info">
 <summary>Workflow branch point</summary>
-<p>The Bad and Good workflows deviate at <a href="https://github.com/lrzmroczek/example-project/-/tags/workflow-branch-point">this commit</a></p>
+<p>The Bad and Good workflows deviate these commits in the <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-develop"><code>develop</code> branch</a> and <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-feat-offset"><code>feat-offset</code> branch</a>.</p>
 </details>
 <h4 id="bad-workflow">Bad Workflow<a class="headerlink" href="#bad-workflow" title="Permanent link">&para;</a></h4>
 <pre class="mermaid"><code>gitGraph
@@ -1163,12 +1163,12 @@
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
 
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
 
     %% This is the branching point between the BAD and GOOD workflows
     %% BAD workflow
@@ -1180,17 +1180,17 @@
     merge develop id: "Still broken!" type: reverse tag: "v1.0"</code></pre>
 <details class="info">
 <summary>Branch names</summary>
-<p>Copies of the branches were created in the <a href="https://github.com/lrzmroczek/example-project">example repo</a> to illustrate this workflow:</p>
+<p>Copies of the branches were created in the <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project">example repo</a> to illustrate this workflow:</p>
 <ul>
-<li><a href="https://github.com/lrzmroczek/example-project/-/tree/develop-bad"><code>develop-bad</code></a> is a copy of <a href="https://github.com/lrzmroczek/example-project/-/tree/develop"><code>develop</code></a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset-bad"><code>feat-offset-bad</code></a> is a copy of <a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset"><code>feat-offset</code></a>, starting from the <a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset"><code>integrate and test offset</code> commit</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-bad"><code>develop-bad</code></a> is a copy of <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop"><code>develop</code></a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-bad"><code>feat-offset-bad</code></a> is a copy of <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset"><code>feat-offset</code></a>, starting from the <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/releases/tag/workflow-branch-point-feat-offset"><code>integrate and test offset</code> commit</a></li>
 </ul>
 </details>
 <details class="example" open="open">
 <summary>Process</summary>
 <ol>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/4">Merge <code>feat-offset</code> branch into <code>develop</code> branch</a></li>
-<li>Test <a href="https://github.com/lrzmroczek/example-project/-/tree/develop-bad"><code>develop</code></a>  branch<ul>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/4">Merge <code>feat-offset</code> branch into <code>develop</code> branch</a></li>
+<li>Test <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-bad"><code>develop</code></a>  branch<ul>
 <li><strong>Branch is now broken (tests fail)!</strong></li>
 </ul>
 </li>
@@ -1227,12 +1227,12 @@
     commit id: "switch mean to median"
     commit id: "udpate documentation"
     checkout develop
-    merge fix-ave id: "still working"
+    merge fix-ave id: "still working" tag: "workflow-branch-point-develop"
 
     checkout feat-offset
     commit id: "add failing offset tests"
     commit id: "implement offset"
-    commit id: "integrate and test offset"
+    commit id: "integrate and test offset" tag: "workflow-branch-point-feat-offset"
 
     %% This is the branching point between the BAD and GOOD workflows
     %% GOOD workflow
@@ -1246,23 +1246,23 @@
     merge develop id: "Still working" tag: "v1.0"</code></pre>
 <details class="info">
 <summary>Branch names</summary>
-<p>Copies of the branches were created in the <a href="https://github.com/lrzmroczek/example-project">example repo</a> to illustrate this workflow:</p>
+<p>Copies of the branches were created in the <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project">example repo</a> to illustrate this workflow:</p>
 <ul>
-<li><a href="https://github.com/lrzmroczek/example-project/-/tree/develop-good"><code>develop-good</code></a> is a copy of <a href="https://github.com/lrzmroczek/example-project/-/tree/develop"><code>develop</code></a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset-good"><code>feat-offset-good</code></a> is a copy of <a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset"><code>feat-offset</code></a>, starting from the <a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset"><code>integrate and test offset</code> commit</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-good"><code>develop-good</code></a> is a copy of <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop"><code>develop</code></a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-good"><code>feat-offset-good</code></a> is a copy of <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset"><code>feat-offset</code></a>, starting from the <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset"><code>integrate and test offset</code> commit</a></li>
 </ul>
 </details>
 <details class="example" open="open">
 <summary>Process</summary>
 <ol>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/5">Merge <code>develop</code> branch into <code>feat-offset</code> branch</a></li>
-<li>Test <a href="https://github.com/lrzmroczek/example-project/-/tree/feat-offset-good"><code>feat-offset</code></a> branch<ul>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/5">Merge <code>develop</code> branch into <code>feat-offset</code> branch</a></li>
+<li>Test <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/feat-offset-good"><code>feat-offset</code></a> branch<ul>
 <li><strong>Branch is now broken (tests fail)!</strong></li>
 </ul>
 </li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/commit/d7febb7aacfcbc316c0799845f48f305f1402733">Fix everything in the <code>feat-offset</code> branch</a></li>
-<li><a href="https://github.com/lrzmroczek/example-project/-/merge_requests/6">Merge <code>feat-offset</code> branch into <code>develop</code> branch</a></li>
-<li>Test <a href="https://github.com/lrzmroczek/example-project/-/tree/develop-good"><code>develop</code></a> branch<ul>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/commit/2c2cdaefd9da21c527570b2b0a83440161bf8bcd">Fix everything in the <code>feat-offset</code> branch</a></li>
+<li><a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/pull/6">Merge <code>feat-offset</code> branch into <code>develop</code> branch</a></li>
+<li>Test <a href="https://github.com/lrzmroczek/sw-dev-lessons-example-project/tree/develop-good"><code>develop</code></a> branch<ul>
 <li><strong>Branch works (tests pass)!</strong></li>
 </ul>
 </li>
